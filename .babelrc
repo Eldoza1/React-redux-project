@@ -8,5 +8,16 @@
 			"loose": true,
 			"modules": false
 		}]
-	]
+	],
+	"plugins": [
+		"babel-plugin-transform-class-properties",
+		"react-hot-loader/babel",
+	],
+	"env" : {
+		"test": {
+			"plugins":[
+				"babel-plugin-transform-es2015-modules-commonjs"
+			]
+		}
+	}
 }

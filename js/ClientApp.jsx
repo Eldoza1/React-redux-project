@@ -1,16 +1,16 @@
+//@flow
+
 import React from 'react';
 import { render } from 'react-dom';
-import { HashRouter, Route } from 'react-router-dom';
-import Landing from './Landing';
-import Search from './Search';
+import App from './App'
 
-const App = () => (
-  <HashRouter>
-    <div className="app">
-      <Route exact path="/" component={Landing} />
-      <Route path="/search" component={Search} />
-    </div>
-  </HashRouter>
-);
+const renderApp = () => {
+  render(<App />, document.getElementById('app'))
+}
+renderApp()
 
-render(<App />, document.getElementById('app'));
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    renderApp()
+  })
+}
